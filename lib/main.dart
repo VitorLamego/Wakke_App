@@ -10,12 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Wakke-Fun',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeFeed(),
+      debugShowCheckedModeBanner: false,
+      home: HomeFeed(),
     );
   }
 }
