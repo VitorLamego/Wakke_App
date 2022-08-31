@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wakke/views/home_feed.dart';
+import 'package:wakke/views/home_feed/home_feed.dart';
 
 void main() {
   runApp(const MyApp());
