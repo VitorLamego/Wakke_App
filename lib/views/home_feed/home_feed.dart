@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/local_storage/database.dart';
 import 'package:wakke/shared/variables.dart';
 import 'package:wakke/views/home_feed/components/app_bar.dart';
 import 'package:wakke/views/home_feed/components/challenge_card.dart';
@@ -14,6 +15,7 @@ class HomeFeed extends StatefulWidget {
 }
 
 class _HomeFeedState extends State<HomeFeed> {
+  final dbHelper = AppDatabase.instance;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -69,7 +71,7 @@ class _HomeFeedState extends State<HomeFeed> {
               ),
             ),
           ),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
             child: CustomToolBar(),
           )

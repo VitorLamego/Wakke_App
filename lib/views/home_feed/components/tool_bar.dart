@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/local_storage/database.dart';
 import 'package:wakke/shared/variables.dart';
 
 class CustomToolBar extends StatelessWidget {
-  const CustomToolBar({Key? key}) : super(key: key);
+  CustomToolBar({Key? key}) : super(key: key);
+
+  final db = AppDatabase.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,10 @@ class CustomToolBar extends StatelessWidget {
           Center(
             heightFactor: 0.6,
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () async {
+                final test = await db.queryAllRows("challenge");
+                print(test);
+              },
               backgroundColor: SharedPrefs.greenButton,
               elevation: 0.1,
               child: Padding(

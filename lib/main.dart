@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wakke/views/home_feed/home_feed.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
