@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/model/challenge.dart';
 import '../../../../shared/variables.dart';
 
 class Top10Card extends StatelessWidget {
-  const Top10Card({Key? key, required this.index}) : super(key: key);
+  const Top10Card({Key? key, required this.index, required this.challenge})
+      : super(key: key);
 
   final index;
+  final Challenge challenge;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +20,10 @@ class Top10Card extends StatelessWidget {
       child: Stack(children: [
         Container(
           width: size.width * 0.45,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage("assets/images/img_challenge_ex.png"),
+              image: NetworkImage(challenge.wallpaper),
             ),
           ),
         ),
@@ -55,13 +58,19 @@ class Top10Card extends StatelessWidget {
                           right: size.width * 0.02,
                         ),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Image.asset(
-                            "assets/images/img_user_ex_comments.png"),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: challenge.author.userImage != null
+                                  ? NetworkImage(challenge.author.userImage!)
+                                  : const AssetImage(
+                                          "assets/images/default_image.png")
+                                      as ImageProvider),
+                        ),
                       ),
-                      const Text(
-                        "coroneljp",
-                        style: TextStyle(
+                      Text(
+                        challenge.author.userNickname,
+                        style: const TextStyle(
                             color: Colors.white,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
@@ -70,11 +79,11 @@ class Top10Card extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.only(top: size.height * 0.008),
-                    child: const Text(
-                      "Desafio do céu",
-                      style: TextStyle(
+                    child: Text(
+                      challenge.title,
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 10,
+                        fontSize: 8,
                         color: Colors.white,
                       ),
                     ),

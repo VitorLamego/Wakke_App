@@ -54,7 +54,7 @@ class _HomeFeedState extends State<HomeFeed> {
                             )
                           ],
                         ),
-                        const Top10ListView(),
+                        Top10ListView(top10: controller.top10),
                         Row(
                           children: [
                             Image.asset(

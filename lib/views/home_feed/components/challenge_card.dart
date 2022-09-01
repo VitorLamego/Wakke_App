@@ -25,15 +25,22 @@ class ChallengeCard extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    height: size.height * 0.05,
+                    height: size.height * 0.04,
                     width: size.width * 0.08,
                     margin: EdgeInsets.symmetric(
                       horizontal: size.width * 0.02,
                     ),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                    child:
-                        Image.asset("assets/images/img_user_ex_comments.png"),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: challenge.author.userImage != null
+                            ? NetworkImage(challenge.author.userImage!)
+                            : const AssetImage(
+                                    "assets/images/default_image.png")
+                                as ImageProvider,
+                      ),
+                    ),
                   ),
                   Text(
                     challenge.author.userName,
