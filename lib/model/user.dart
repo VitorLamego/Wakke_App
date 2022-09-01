@@ -14,4 +14,9 @@ class User {
       'userImage': userImage
     };
   }
+
+  static User userFromMap(Map<String, dynamic> user) {
+    return User(user["userId"], user["userName"], user["userNickname"],
+        user["userImage"]);
+  }
 }

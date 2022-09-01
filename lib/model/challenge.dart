@@ -65,4 +65,27 @@ class Challenge {
       'userId': author.userId
     };
   }
+
+  static Challenge fromMap(Map<String, dynamic> challenge, User user) {
+    return Challenge(
+        challenge["id"],
+        challenge["private"] == 1 ? true : false,
+        challenge["timesPlayed"],
+        challenge["qtdComments"],
+        challenge["scoreAvg"],
+        challenge["correctAvg"].toDouble(),
+        challenge["durationAvg"].toDouble(),
+        challenge["rating"].toDouble(),
+        challenge["active"] == 1 ? true : false,
+        challenge["finished"] == 1 ? true : false,
+        challenge["challengeId"],
+        challenge["title"],
+        challenge["description"],
+        challenge["wallpaper"],
+        challenge["video"],
+        challenge["nicNumber"],
+        challenge["dtCreation"],
+        challenge["canDelete"] == 1 ? true : false,
+        user);
+  }
 }

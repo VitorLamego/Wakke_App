@@ -84,7 +84,7 @@ class AppDatabase {
             element["partidas_executadas_qtd"],
             element["comentarios_qtd"],
             element["media_nota"],
-            element["media_acertos"],
+            element["media_acertos"].toDouble(),
             element["media_duracao"].toDouble(),
             element["avaliacao_nota"].toDouble(),
             element["status_ativo"],
@@ -113,12 +113,6 @@ class AppDatabase {
     Database db = await instance.database;
     return await db.query(table);
   }
-
-  // Future<int> queryRowCount(String table) async {
-  //   Database db = await instance.database;
-  //   return Sqflite.firstIntValue(
-  //       await db.rawQuery('SELECT COUNT(*) FROM $table'));
-  // }
 
   Future<int> update(
       String table, String primaryKeyColumn, Map<String, dynamic> row) async {

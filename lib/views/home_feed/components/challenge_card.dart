@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/model/challenge.dart';
 
 class ChallengeCard extends StatelessWidget {
-  const ChallengeCard({Key? key}) : super(key: key);
+  const ChallengeCard({Key? key, required this.challenge}) : super(key: key);
+
+  final Challenge challenge;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +35,9 @@ class ChallengeCard extends StatelessWidget {
                     child:
                         Image.asset("assets/images/img_user_ex_comments.png"),
                   ),
-                  const Text(
-                    "coroneljp",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  Text(
+                    challenge.author.userName,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -49,12 +52,12 @@ class ChallengeCard extends StatelessWidget {
           ),
           Container(
             height: size.height * 0.18,
-            margin: EdgeInsets.only(bottom: 10),
+            margin: const EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("assets/images/img_challenge_ex.png"),
+                image: NetworkImage(challenge.wallpaper),
               ),
             ),
           ),
@@ -68,9 +71,9 @@ class ChallengeCard extends StatelessWidget {
                     height: size.height * 0.02,
                   ),
                   const SizedBox(width: 2),
-                  const Text(
-                    "6",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  Text(
+                    challenge.timesPlayed.toString(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -82,9 +85,9 @@ class ChallengeCard extends StatelessWidget {
                     color: Colors.black.withOpacity(0.4),
                   ),
                   const SizedBox(width: 2),
-                  const Text(
-                    "2",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  Text(
+                    challenge.qtdComments.toString(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(width: 15),
                   Icon(
@@ -93,9 +96,9 @@ class ChallengeCard extends StatelessWidget {
                     color: Colors.black.withOpacity(0.4),
                   ),
                   const SizedBox(width: 2),
-                  const Text(
-                    "0.0",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  Text(
+                    challenge.rating.toString(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   )
                 ],
               )
@@ -103,8 +106,8 @@ class ChallengeCard extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
-            child: const Text(
-              "Teste seus conhecimento sobre doces e brincadeiras de criança",
+            child: Text(
+              challenge.description,
               textAlign: TextAlign.justify,
             ),
           )

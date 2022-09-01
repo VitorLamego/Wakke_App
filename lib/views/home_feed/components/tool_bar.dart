@@ -28,10 +28,7 @@ class CustomToolBar extends StatelessWidget {
           Center(
             heightFactor: 0.6,
             child: FloatingActionButton(
-              onPressed: () async {
-                final test = await db.queryAllRows("challenge");
-                print(test);
-              },
+              onPressed: () async {},
               backgroundColor: SharedPrefs.greenButton,
               elevation: 0.1,
               child: Padding(
