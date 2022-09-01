@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/shared/variables.dart';
 
 class CustomToolBar extends StatelessWidget {
   const CustomToolBar({Key? key}) : super(key: key);
@@ -11,6 +12,12 @@ class CustomToolBar extends StatelessWidget {
       height: size.height * 0.11,
       child: Stack(
         children: [
+          Center(
+            child: Container(
+              color: SharedPrefs.backgroundColor,
+              width: size.width * 0.3,
+            ),
+          ),
           CustomPaint(
             size: Size(size.width, size.height * 0.11),
             painter: CustomPainterWakke(),
@@ -19,7 +26,7 @@ class CustomToolBar extends StatelessWidget {
             heightFactor: 0.6,
             child: FloatingActionButton(
               onPressed: () {},
-              backgroundColor: const Color.fromARGB(255, 57, 208, 195),
+              backgroundColor: SharedPrefs.greenButton,
               elevation: 0.1,
               child: Padding(
                 padding: const EdgeInsets.only(left: 6),
@@ -30,7 +37,7 @@ class CustomToolBar extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: size.width,
             height: size.height * 0.11,
             child: Row(

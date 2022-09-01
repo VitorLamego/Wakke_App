@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/shared/variables.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -26,9 +27,10 @@ class CustomAppBar extends StatelessWidget {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Image.asset(
-            "assets/images/icon_edit_challenge.png",
-            height: size.height * 0.02,
+          icon: Icon(
+            Icons.push_pin_outlined,
+            size: size.height * 0.022,
+            color: SharedPrefs.primaryPurple,
           ),
         ),
         IconButton(
