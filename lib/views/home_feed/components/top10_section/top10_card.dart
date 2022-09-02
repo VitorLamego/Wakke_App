@@ -21,6 +21,7 @@ class Top10Card extends StatelessWidget {
         Container(
           width: size.width * 0.45,
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
               fit: BoxFit.fill,
               image: NetworkImage(challenge.wallpaper),
