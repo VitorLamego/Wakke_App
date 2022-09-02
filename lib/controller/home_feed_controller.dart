@@ -12,10 +12,10 @@ class HomeFeedController {
     List<Widget> columnChallenges = [];
     List<Map<String, dynamic>> challenges = await service.getAllChallenges();
 
-    for (var element in challenges) {
-      var userData = await service.getSpecificUser(element["userId"]);
+    for (int index = 0; index < challenges.length; index++) {
+      var userData = await service.getSpecificUser(challenges[index]["userId"]);
       User user = User.userFromMap(userData);
-      Challenge challenge = Challenge.fromMap(element, user);
+      Challenge challenge = Challenge.fromMap(challenges[index], user);
 
       if (top10.length == 9) {
         top10.add(challenge);

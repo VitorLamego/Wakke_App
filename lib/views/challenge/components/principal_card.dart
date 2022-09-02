@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:wakke/components/more_vert_icon.dart';
+import 'package:wakke/model/challenge.dart';
 import 'package:wakke/shared/variables.dart';
 import 'package:wakke/views/challenge/components/author_challenge.dart';
 import 'package:wakke/views/challenge/components/challenge_btns.dart';
 import 'package:wakke/views/challenge/components/challenge_ranking.dart';
 
 class PrincipalChallengeCard extends StatelessWidget {
-  const PrincipalChallengeCard({Key? key}) : super(key: key);
+  const PrincipalChallengeCard({Key? key, required this.challenge})
+      : super(key: key);
+
+  final Challenge challenge;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class PrincipalChallengeCard extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              AuthorChallenge(),
+              AuthorChallenge(challenge: challenge),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -46,7 +50,7 @@ class PrincipalChallengeCard extends StatelessWidget {
                 ],
               ),
               Text(
-                "Desafio 1. Esse desafio é um teste realizado no dia 08/07.",
+                challenge.description,
                 style: TextStyle(fontWeight: FontWeight.w300),
               ),
               ChallengeRankingList(),

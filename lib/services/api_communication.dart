@@ -4,7 +4,8 @@ class AppService {
   final db = AppDatabase.instance;
 
   Future<List<Map<String, dynamic>>> getAllChallenges() async {
-    return await db.queryAllRows("challenge");
+    List<Map<String, dynamic>> challenges = await db.queryAllRows("challenge");
+    return challenges;
   }
 
   Future<Map<String, dynamic>> getSpecificUser(String id) async {

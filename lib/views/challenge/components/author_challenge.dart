@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/model/challenge.dart';
 import 'package:wakke/shared/variables.dart';
 
 class AuthorChallenge extends StatelessWidget {
-  const AuthorChallenge({Key? key}) : super(key: key);
+  const AuthorChallenge({Key? key, required this.challenge}) : super(key: key);
+
+  final Challenge challenge;
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +37,15 @@ class AuthorChallenge extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage("assets/images/default_image.png"),
+                    image: challenge.author.userImage != null
+                        ? NetworkImage(challenge.author.userImage!)
+                        : AssetImage("assets/images/default_image.png")
+                            as ImageProvider,
                   ),
                 ),
               ),
               Text(
-                "Lorencini",
+                challenge.author.userNickname,
                 style: TextStyle(fontWeight: FontWeight.bold),
               )
             ],
@@ -59,7 +65,7 @@ class AuthorChallenge extends StatelessWidget {
                   children: [
                     Image.asset("assets/images/icon_target.png"),
                     Text(
-                      "60.0%",
+                      "${challenge.correctAvg.toStringAsFixed(1)}%",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 9,
@@ -83,7 +89,7 @@ class AuthorChallenge extends StatelessWidget {
                   children: [
                     Image.asset("assets/images/icon_timer.png"),
                     Text(
-                      "66seg",
+                      "${challenge.durationAvg.toStringAsFixed(0)}seg",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 9,

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/model/challenge.dart';
 import 'package:wakke/views/challenge/components/principal_card.dart';
 import 'package:wakke/views/home_feed/components/tool_bar.dart';
 
 class ChallengePage extends StatelessWidget {
-  const ChallengePage({Key? key}) : super(key: key);
+  const ChallengePage({Key? key, required this.challenge}) : super(key: key);
+
+  final Challenge challenge;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +18,9 @@ class ChallengePage extends StatelessWidget {
           Container(
             height: size.height * 0.35,
             decoration: BoxDecoration(
-              color: Colors.yellow,
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("assets/images/img_challenge_ex.png"),
+                image: NetworkImage(challenge.wallpaper),
               ),
             ),
           ),
@@ -40,7 +42,7 @@ class ChallengePage extends StatelessWidget {
                     Container(
                       width: size.width * 0.7,
                       child: Text(
-                        "AS 7 MARAVILHAS DO MUNDO ANTIGO: Voce as conhece ?",
+                        challenge.title,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
@@ -49,7 +51,7 @@ class ChallengePage extends StatelessWidget {
                     SizedBox(width: size.height * 0.05)
                   ],
                 ),
-                PrincipalChallengeCard()
+                PrincipalChallengeCard(challenge: challenge)
               ],
             ),
           ),
