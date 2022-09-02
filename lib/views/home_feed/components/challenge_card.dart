@@ -53,7 +53,16 @@ class ChallengeCard extends StatelessWidget {
                 height: size.height * 0.02,
                 minWidth: size.width * 0.01,
                 padding: const EdgeInsets.all(0),
-                child: const Icon(Icons.more_vert, size: 15),
+                child: PopupMenuButton<Text>(
+                  itemBuilder: (context) => buildItem(),
+                  child: Icon(
+                    Icons.more_vert,
+                    size: 15,
+                  ),
+                  elevation: 1,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                ),
               )
             ],
           ),
@@ -122,4 +131,18 @@ class ChallengeCard extends StatelessWidget {
       ),
     );
   }
+
+  List<PopupMenuEntry<Text>> buildItem() => [
+        PopupMenuItem(
+            child: Text("Denunciar", style: TextStyle(fontSize: 12)),
+            height: 20),
+        PopupMenuItem(
+          child: Text("Compartilhar", style: TextStyle(fontSize: 12)),
+          height: 20,
+        ),
+        PopupMenuItem(
+          child: Text("Cancelar", style: TextStyle(fontSize: 12)),
+          height: 20,
+        )
+      ];
 }
