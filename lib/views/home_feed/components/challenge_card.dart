@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/components/more_vert_icon.dart';
 import 'package:wakke/model/challenge.dart';
 
 class ChallengeCard extends StatelessWidget {
@@ -48,22 +49,7 @@ class ChallengeCard extends StatelessWidget {
                   ),
                 ],
               ),
-              MaterialButton(
-                onPressed: () {},
-                height: size.height * 0.02,
-                minWidth: size.width * 0.01,
-                padding: const EdgeInsets.all(0),
-                child: PopupMenuButton<Text>(
-                  itemBuilder: (context) => buildItem(),
-                  child: Icon(
-                    Icons.more_vert,
-                    size: 15,
-                  ),
-                  elevation: 1,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                ),
-              )
+              CustomMoreVertIcon()
             ],
           ),
           Container(
@@ -131,18 +117,4 @@ class ChallengeCard extends StatelessWidget {
       ),
     );
   }
-
-  List<PopupMenuEntry<Text>> buildItem() => [
-        PopupMenuItem(
-            child: Text("Denunciar", style: TextStyle(fontSize: 12)),
-            height: 20),
-        PopupMenuItem(
-          child: Text("Compartilhar", style: TextStyle(fontSize: 12)),
-          height: 20,
-        ),
-        PopupMenuItem(
-          child: Text("Cancelar", style: TextStyle(fontSize: 12)),
-          height: 20,
-        )
-      ];
 }

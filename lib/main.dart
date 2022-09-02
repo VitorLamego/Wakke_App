@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wakke/local_storage/database.dart';
+import 'package:wakke/views/challenge/challenge_view.dart';
 import 'package:wakke/views/home_feed/home_feed.dart';
 
 void main() async {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Wakke-Fun',
       debugShowCheckedModeBanner: false,
-      home: HomeFeed(),
+      home: ChallengePage(),
     );
   }
 }
