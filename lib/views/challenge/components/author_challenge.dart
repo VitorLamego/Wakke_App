@@ -32,7 +32,7 @@ class AuthorChallenge extends StatelessWidget {
               Container(
                 height: size.height * 0.06,
                 width: size.width * 0.12,
-                margin: EdgeInsets.symmetric(horizontal: 15),
+                margin: EdgeInsets.symmetric(horizontal: 5),
                 decoration: BoxDecoration(
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(10),
@@ -70,7 +70,7 @@ class AuthorChallenge extends StatelessWidget {
                       "${challenge.correctAvg.toStringAsFixed(1)}%",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: size.height * 0.015,
+                        fontSize: size.height * 0.013,
                         fontWeight: FontWeight.bold,
                       ),
                     )
@@ -94,7 +94,7 @@ class AuthorChallenge extends StatelessWidget {
                       "${challenge.durationAvg.toStringAsFixed(0)}seg",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: size.height * 0.015,
+                        fontSize: size.height * 0.013,
                         fontWeight: FontWeight.bold,
                       ),
                     )

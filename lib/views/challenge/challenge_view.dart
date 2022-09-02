@@ -20,7 +20,9 @@ class ChallengePage extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: NetworkImage(challenge.wallpaper),
+                image: NetworkImage(
+                  challenge.wallpaper,
+                ),
               ),
             ),
           ),
