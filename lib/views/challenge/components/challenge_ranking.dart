@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/model/challenge.dart';
 import 'package:wakke/shared/variables.dart';
 
 class ChallengeRankingList extends StatelessWidget {
-  const ChallengeRankingList({Key? key}) : super(key: key);
+  const ChallengeRankingList({Key? key, required this.challenge})
+      : super(key: key);
+
+  final Challenge challenge;
 
   @override
   Widget build(BuildContext context) {
+    Map<int, String> imageCrown = {
+      0: "assets/images/icon_coroa_ouro.png",
+      1: "assets/images/icon_coroa_prata.png",
+      2: "assets/images/icon_coroa_bronze.png"
+    };
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(top: size.height * 0.05),
@@ -23,7 +32,7 @@ class ChallengeRankingList extends StatelessWidget {
                       height: size.height * 0.02,
                     ),
                     Text(
-                      "Pessoas (39)",
+                      "Pessoas (${challenge.timesPlayed})",
                       style: TextStyle(
                           color: SharedPrefs.primaryPurple,
                           fontSize: 17,
@@ -43,7 +52,7 @@ class ChallengeRankingList extends StatelessWidget {
                       physics: const ClampingScrollPhysics(),
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      itemCount: 10,
+                      itemCount: challenge.timesPlayed,
                       itemBuilder: (BuildContext context, int index) =>
                           Container(
                         height: size.height * 0.08,
@@ -58,17 +67,30 @@ class ChallengeRankingList extends StatelessWidget {
                                 width: size.width * 0.15,
                                 margin: EdgeInsets.only(right: 10),
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(
-                                            "assets/images/default_image.png"))),
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                        "assets/images/img_user_ranking_ex.png"),
+                                  ),
+                                ),
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("${index + 1}º"),
+                                  Row(
+                                    children: [
+                                      Text("${index + 1}º"),
+                                      SizedBox(width: 3),
+                                      (index < 3)
+                                          ? Image.asset(
+                                              imageCrown[index]!,
+                                              height: size.height * 0.015,
+                                            )
+                                          : SizedBox()
+                                    ],
+                                  ),
                                   Text(
                                     "cfgtejota",
                                     style:

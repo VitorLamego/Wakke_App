@@ -53,7 +53,7 @@ class PrincipalChallengeCard extends StatelessWidget {
                 challenge.description,
                 style: TextStyle(fontWeight: FontWeight.w300),
               ),
-              ChallengeRankingList(),
+              ChallengeRankingList(challenge: challenge),
               ChallengeButtons()
             ],
           ),
