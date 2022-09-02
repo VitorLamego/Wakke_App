@@ -69,6 +69,8 @@ class AppDatabase {
     List<dynamic> jsonData = json.decode(jsonText);
     List<String> usersCreated = [];
 
+    if (await queryAllRows("user") != []) return;
+
     jsonData.forEach(
       (element) async {
         User user = User(

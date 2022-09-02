@@ -36,7 +36,7 @@ class NavigationDrawer extends StatelessWidget {
             SizedBox(height: size.height * 0.006),
             const ListTile(
               title: Text(
-                "Food Fun",
+                "Feed Fun",
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
             ),
