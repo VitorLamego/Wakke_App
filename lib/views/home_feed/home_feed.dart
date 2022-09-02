@@ -3,6 +3,7 @@ import 'package:wakke/controller/home_feed_controller.dart';
 import 'package:wakke/shared/variables.dart';
 import 'package:wakke/views/home_feed/components/app_bar.dart';
 import 'package:wakke/views/home_feed/components/tool_bar.dart';
+import 'package:wakke/views/navigation_drawer/navigation.dart';
 
 import 'components/top10_section/top10_list.dart';
 
@@ -23,8 +24,9 @@ class _HomeFeedState extends State<HomeFeed> {
       backgroundColor: const Color(0XFFF5F5F5),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(size.height * 0.07),
-        child: const CustomAppBar(),
+        child: CustomAppBar(context: context),
       ),
+      drawer: const NavigationDrawer(),
       body: Stack(
         children: [
           FutureBuilder(

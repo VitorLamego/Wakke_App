@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:wakke/shared/variables.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
+  const CustomAppBar({Key? key, required this.context}) : super(key: key);
+
+  final BuildContext context;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,9 @@ class CustomAppBar extends StatelessWidget {
       backgroundColor: Colors.white,
       centerTitle: true,
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
         icon: Image.asset(
           "assets/images/icon_header_menu.png",
           height: size.height * 0.02,
