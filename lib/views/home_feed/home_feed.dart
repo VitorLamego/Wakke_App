@@ -23,7 +23,7 @@ class _HomeFeedState extends State<HomeFeed> {
     return Scaffold(
       backgroundColor: const Color(0XFFF5F5F5),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(size.height * 0.07),
+        preferredSize: Size.fromHeight(size.height * 0.06),
         child: CustomAppBar(context: context),
       ),
       drawer: const NavigationDrawer(),
@@ -50,8 +50,9 @@ class _HomeFeedState extends State<HomeFeed> {
                               padding: const EdgeInsets.only(left: 5, top: 3),
                               child: Text(
                                 "Top 10",
-                                style:
-                                    TextStyle(color: SharedPrefs.primaryPurple),
+                                style: TextStyle(
+                                    color: SharedPrefs.primaryPurple,
+                                    fontSize: size.height * 0.02),
                               ),
                             )
                           ],
@@ -63,11 +64,14 @@ class _HomeFeedState extends State<HomeFeed> {
                               "assets/images/icon_chat.png",
                               height: size.height * 0.025,
                             ),
-                            const Padding(
+                            Padding(
                               padding: EdgeInsets.only(left: 5, top: 3),
                               child: Text(
                                 "Está acontecendo...",
-                                style: TextStyle(color: Color(0XFF6236FF)),
+                                style: TextStyle(
+                                  color: SharedPrefs.primaryPurple,
+                                  fontSize: size.height * 0.02,
+                                ),
                               ),
                             )
                           ],

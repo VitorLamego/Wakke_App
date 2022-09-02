@@ -41,7 +41,7 @@ class PrincipalChallengeCard extends StatelessWidget {
                         "Desafio",
                         style: TextStyle(
                             color: SharedPrefs.primaryPurple,
-                            fontSize: 17,
+                            fontSize: size.height * 0.02,
                             fontWeight: FontWeight.w300),
                       )
                     ],
@@ -51,7 +51,8 @@ class PrincipalChallengeCard extends StatelessWidget {
               ),
               Text(
                 challenge.description,
-                style: TextStyle(fontWeight: FontWeight.w300),
+                style: TextStyle(
+                    fontWeight: FontWeight.w300, fontSize: size.height * 0.022),
               ),
               ChallengeRankingList(challenge: challenge),
               ChallengeButtons()

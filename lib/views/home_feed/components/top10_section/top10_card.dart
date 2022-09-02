@@ -49,9 +49,8 @@ class Top10Card extends StatelessWidget {
                 ),
               ),
               Container(
-                height: size.height * 0.065,
                 margin: const EdgeInsets.all(5),
-                padding: const EdgeInsets.all(3),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: SharedPrefs.primaryPurple,
                   borderRadius: BorderRadius.circular(10),
@@ -62,8 +61,8 @@ class Top10Card extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          height: size.height * 0.022,
-                          width: size.width * 0.05,
+                          height: size.height * 0.026,
+                          width: size.width * 0.06,
                           margin: EdgeInsets.only(
                             right: size.width * 0.02,
                           ),
@@ -80,9 +79,9 @@ class Top10Card extends StatelessWidget {
                         ),
                         Text(
                           challenge.author.userNickname,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: size.height * 0.015,
                               fontWeight: FontWeight.bold),
                         )
                       ],
@@ -91,9 +90,9 @@ class Top10Card extends StatelessWidget {
                       margin: EdgeInsets.only(top: size.height * 0.008),
                       child: Text(
                         challenge.title,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 8,
+                          fontSize: size.height * 0.011,
                           color: Colors.white,
                         ),
                       ),

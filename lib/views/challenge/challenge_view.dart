@@ -33,7 +33,7 @@ class ChallengePage extends StatelessWidget {
                     IconButton(
                       icon: Image.asset(
                         "assets/images/icon_header_back_branco.png",
-                        height: size.height * 0.05,
+                        height: size.height * 0.08,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -45,7 +45,9 @@ class ChallengePage extends StatelessWidget {
                         challenge.title,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: size.height * 0.025),
                       ),
                     ),
                     SizedBox(width: size.height * 0.05)

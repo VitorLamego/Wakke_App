@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget {
         ),
       ),
       title: SizedBox(
-        width: size.width * 0.3,
+        width: size.width * 0.23,
         child: Image.asset(
           "assets/images/logo_wakke_roxo.png",
         ),
@@ -33,7 +33,7 @@ class CustomAppBar extends StatelessWidget {
           onPressed: () {},
           icon: Icon(
             Icons.push_pin_outlined,
-            size: size.height * 0.022,
+            size: size.height * 0.025,
             color: SharedPrefs.primaryPurple,
           ),
         ),
@@ -41,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
           onPressed: () {},
           icon: Image.asset(
             "assets/images/icon_header_search.png",
-            height: size.height * 0.02,
+            height: size.height * 0.025,
           ),
         ),
       ],

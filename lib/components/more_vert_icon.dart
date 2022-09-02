@@ -15,7 +15,7 @@ class CustomMoreVertIcon extends StatelessWidget {
         itemBuilder: (context) => buildItem(),
         child: Icon(
           Icons.more_vert,
-          size: 15,
+          size: size.height * 0.02,
         ),
         elevation: 1,
         shape: RoundedRectangleBorder(

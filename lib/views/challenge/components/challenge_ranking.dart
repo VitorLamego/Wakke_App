@@ -35,7 +35,7 @@ class ChallengeRankingList extends StatelessWidget {
                       "Pessoas (${challenge.timesPlayed})",
                       style: TextStyle(
                           color: SharedPrefs.primaryPurple,
-                          fontSize: 17,
+                          fontSize: size.height * 0.02,
                           fontWeight: FontWeight.w300),
                     )
                   ],
@@ -124,7 +124,7 @@ class ChallengeRankingList extends StatelessWidget {
                       "Times (0)",
                       style: TextStyle(
                           color: SharedPrefs.primaryPurple,
-                          fontSize: 17,
+                          fontSize: size.height * 0.02,
                           fontWeight: FontWeight.w300),
                     )
                   ],

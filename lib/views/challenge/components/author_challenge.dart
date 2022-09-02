@@ -17,10 +17,11 @@ class AuthorChallenge extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              offset: Offset(0, 4),
-              blurRadius: 4,
-              spreadRadius: 0)
+            color: Colors.black.withOpacity(0.2),
+            offset: Offset(0, 4),
+            blurRadius: 4,
+            spreadRadius: 0,
+          )
         ],
       ),
       child: Row(
@@ -46,7 +47,8 @@ class AuthorChallenge extends StatelessWidget {
               ),
               Text(
                 challenge.author.userNickname,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: size.height * 0.02),
               )
             ],
           ),
@@ -54,21 +56,21 @@ class AuthorChallenge extends StatelessWidget {
             children: [
               Container(
                 height: size.height * 0.035,
-                width: size.width * 0.18,
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/icon_target.png"),
+                    SizedBox(width: size.width * 0.01),
                     Text(
                       "${challenge.correctAvg.toStringAsFixed(1)}%",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 9,
+                        fontSize: size.height * 0.015,
                         fontWeight: FontWeight.bold,
                       ),
                     )
@@ -78,21 +80,21 @@ class AuthorChallenge extends StatelessWidget {
               SizedBox(width: 5),
               Container(
                 height: size.height * 0.035,
-                width: size.width * 0.18,
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/icon_timer.png"),
+                    SizedBox(width: size.width * 0.01),
                     Text(
                       "${challenge.durationAvg.toStringAsFixed(0)}seg",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 9,
+                        fontSize: size.height * 0.015,
                         fontWeight: FontWeight.bold,
                       ),
                     )

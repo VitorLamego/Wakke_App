@@ -12,7 +12,7 @@ class ChallengeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.35,
+      padding: EdgeInsets.only(bottom: size.height * 0.05),
       margin: EdgeInsets.only(top: size.height * 0.03),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -34,11 +34,11 @@ class ChallengeCard extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      height: size.height * 0.04,
-                      width: size.width * 0.08,
+                      height: size.height * 0.06,
+                      width: size.width * 0.09,
                       margin: EdgeInsets.symmetric(
-                        horizontal: size.width * 0.02,
-                      ),
+                          horizontal: size.width * 0.02,
+                          vertical: size.height * 0.01),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
@@ -53,7 +53,9 @@ class ChallengeCard extends StatelessWidget {
                     ),
                     Text(
                       challenge.author.userName,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: size.height * 0.02),
                     ),
                   ],
                 ),
@@ -78,12 +80,15 @@ class ChallengeCard extends StatelessWidget {
                   children: [
                     Image.asset(
                       "assets/images/icon_account.png",
-                      height: size.height * 0.02,
+                      height: size.height * 0.025,
                     ),
                     const SizedBox(width: 2),
                     Text(
                       challenge.timesPlayed.toString(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.height * 0.015,
+                      ),
                     )
                   ],
                 ),
@@ -91,24 +96,30 @@ class ChallengeCard extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.chat_outlined,
-                      size: size.height * 0.02,
+                      size: size.height * 0.025,
                       color: Colors.black.withOpacity(0.4),
                     ),
                     const SizedBox(width: 2),
                     Text(
                       challenge.qtdComments.toString(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.height * 0.015,
+                      ),
                     ),
                     const SizedBox(width: 15),
                     Icon(
                       Icons.star_outline,
-                      size: size.height * 0.02,
+                      size: size.height * 0.025,
                       color: Colors.black.withOpacity(0.4),
                     ),
                     const SizedBox(width: 2),
                     Text(
                       challenge.rating.toString(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.height * 0.015,
+                      ),
                     )
                   ],
                 )
@@ -119,6 +130,7 @@ class ChallengeCard extends StatelessWidget {
               child: Text(
                 challenge.description,
                 textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: size.height * 0.02),
               ),
             )
           ],

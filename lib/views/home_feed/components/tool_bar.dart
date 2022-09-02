@@ -26,18 +26,31 @@ class CustomToolBar extends StatelessWidget {
             painter: CustomPainterWakke(),
           ),
           Center(
-            heightFactor: 0.6,
-            child: FloatingActionButton(
-              onPressed: () async {},
-              backgroundColor: SharedPrefs.greenButton,
-              elevation: 0.1,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 6),
-                child: Image.asset(
-                  "assets/images/icon_wakke_fun.png",
-                  height: size.height * 0.05,
+            heightFactor: 0.4,
+            child: Container(
+              child: MaterialButton(
+                onPressed: () {
+                  print(size.height);
+                },
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 6),
                 ),
               ),
+              decoration: BoxDecoration(
+                color: SharedPrefs.greenButton,
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/icon_wakke_fun.png",
+                    ),
+                    scale: 1024 / size.height),
+              ),
+              height: size.height * 0.1,
+              width: size.width * 0.15,
             ),
           ),
           SizedBox(
