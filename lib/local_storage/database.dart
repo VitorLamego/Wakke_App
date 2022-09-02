@@ -20,8 +20,12 @@ class AppDatabase {
   _initDatabase() async {
     String documentsDirectory = await getDatabasesPath();
     String path = join(documentsDirectory, _databaseName);
-    return await openDatabase(path,
-        version: _databaseVersion, onCreate: _onCreate);
+    Database? datab;
+    try {
+      datab = await openDatabase(path,
+          version: _databaseVersion, onCreate: _onCreate);
+    } on Exception catch (_) {}
+    return datab;
   }
 
   Future _onCreate(Database db, int version) async {
@@ -58,7 +62,6 @@ class AppDatabase {
             CONSTRAINT challenge_user_FK FOREIGN KEY (userID) REFERENCES user (useriD)
           );
           ''');
-    await populateDB();
   }
 
   Future populateDB() async {

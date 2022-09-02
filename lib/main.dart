@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wakke/local_storage/database.dart';
 import 'package:wakke/views/home_feed/home_feed.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await AppDatabase.instance.populateDB();
   runApp(const MyApp());
 }
 
