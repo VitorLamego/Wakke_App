@@ -39,11 +39,17 @@ dependencies:
 
 dev_dependencies:
   flutter_launcher_icons: ^0.10.0
+  flutter_native_splash: ^2.2.8
 
 flutter_icons:
   android: "ic_launcher"
   ios: true
   image_path: "assets/images/logo_icon_wakke2.png"
+
+flutter_native_splash:
+  color: "#6236FF"
+  image: assets/images/logo_wakke_branco.png
+  android: true
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
