@@ -25,16 +25,29 @@ class ChallengePage extends StatelessWidget {
           SafeArea(
             child: Column(
               children: [
-                Center(
-                  child: Container(
-                    width: size.width * 0.7,
-                    child: Text(
-                      "AS 7 MARAVILHAS DO MUNDO ANTIGO: Voce as conhece ?",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: Image.asset(
+                        "assets/images/icon_header_back_branco.png",
+                        height: size.height * 0.05,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
-                  ),
+                    Container(
+                      width: size.width * 0.7,
+                      child: Text(
+                        "AS 7 MARAVILHAS DO MUNDO ANTIGO: Voce as conhece ?",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(width: size.height * 0.05)
+                  ],
                 ),
                 PrincipalChallengeCard()
               ],
